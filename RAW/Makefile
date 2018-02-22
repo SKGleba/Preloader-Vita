@@ -4,7 +4,7 @@ TARGET = ManfactFlagger
 PLUGIN_OBJS = preloader.o
 HEADERS = $(wildcard *.h)
 
-PLUGIN_LIBS = -ltaihen_stub -lSceSysclibForDriver_stub -lSceModulemgrForKernel_stub -lSceIofilemgrForDriver_stub
+PLUGIN_LIBS = -lSceSysclibForDriver_stub -lSceModulemgrForKernel_stub -lSceIofilemgrForDriver_stub
 
 PREFIX  = arm-vita-eabi
 CC      = $(PREFIX)-gcc
