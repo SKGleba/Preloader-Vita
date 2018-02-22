@@ -22,7 +22,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <taihen.h>
 #include <psp2kern/kernel/modulemgr.h>
 #include <psp2kern/kernel/threadmgr.h>
 #include <psp2kern/kernel/sysmem.h>
