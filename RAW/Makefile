@@ -1,10 +1,7 @@
-TITLE_ID = SKGM4NU37
-TARGET = ManfactFlagger
-
 PLUGIN_OBJS = preloader.o
 HEADERS = $(wildcard *.h)
 
-PLUGIN_LIBS = -lSceSysclibForDriver_stub -lSceModulemgrForKernel_stub -lSceIofilemgrForDriver_stub
+PLUGIN_LIBS = -lSceSysclibForDriver_stub -lSceModulemgrForKernel_stub
 
 PREFIX  = arm-vita-eabi
 CC      = $(PREFIX)-gcc
