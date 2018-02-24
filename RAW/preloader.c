@@ -1,5 +1,5 @@
 // Preloader base
-// UberLight version, only psTV and/or plugin loader (on vita it pratically wont work)
+// UberLight version, only psTV and/or plugin loader (on vita it will be unstable)
 // reported problems with latest SDK
 // Spoof by Zecoxao , mod by SKGleba
 
@@ -25,7 +25,6 @@
 #include <psp2kern/kernel/modulemgr.h>
 #include <psp2kern/kernel/threadmgr.h>
 #include <psp2kern/kernel/sysmem.h>
-#include <psp2kern/io/fcntl.h>
 
 static int afe;
 
@@ -86,25 +85,25 @@ unsigned char mgc[0x8] = {
 
 unsigned char dcd[0x8] = {
 // no effect
-	0x00, 
     0x00, 
-// Must be 0x01, otherwise-chinese shit
+    0x00, 
+// Must be 0x01, otherwise-chinese shit, WHY? -- I think it may be sceregmgr related.
     0x01, 
 /*
- *00 -- no activation,testkit+devkit, i think prototype
- *01 -- Devkit , battery failed
- *02 -- Testkit , exp
- *03 -- FalsePositive/no testkit func but health warn
- *04 -- same
- *05 -- Looks like retail
- *06 -- same as 3
- *07 -- same as 5
- *08 -- same as 3
- *09 -- same as 5
- *10+ -- chinese shit, C1-13819-2
+ *00 -- no activation, i think prototype, returns isTest 1;
+ *01 -- Devkit PDEL version.
+ *02 -- Testkit PTEL version.
+ *03 -- Health warning instead of epilepsy warning, ?region related? = ret var1
+ *04 -- ret var 1
+ *05 -- Epilepsy warning, ?region related? = ret var2
+ *06 -- ret var 1
+ *07 -- ret var 2
+ *08 -- ret var 1
+ *09 -- ret var 2
+ *10+ -- chinese shit, C1-13819-2 WHY? -- maybe sceregmgr registry.db0 related
  */
     0x01, 
-//no effect
+//no effect.
     0x00, 
     0x10, 
     0x0C, 
